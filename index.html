@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Attendance App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Attendance App</h1>
+
+    <div class="section">
+      <input type="text" id="classroomName" placeholder="New Classroom Name" />
+      <button onclick="createClassroom()">Create Classroom</button>
+    </div>
+
+    <div class="section">
+      <select id="classroomSelect" onchange="loadClassroom()">
+        <option value="">-- Select Classroom --</option>
+      </select>
+    </div>
+
+    <div id="classSection" style="display:none;">
+      <input type="text" id="studentName" placeholder="Add Student Name" />
+      <button onclick="addStudent()">Add Student</button>
+
+      <input type="date" id="attendanceDate" />
+      <button onclick="markAllPresent()">Mark All Present</button>
+
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Toggle</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <button onclick="printAttendance()">🖨 Print Attendance</button>
+      <button onclick="clearClassroom()">🗑 Delete Classroom</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
